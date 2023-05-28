@@ -12,14 +12,15 @@ import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {
-  const [anchorElNav, setAnchorElNav] = useState();
+  const [anchorElNav, setAnchorElNav] = useState(null);
   const contacts = useSelector(state => state.contacts.contacts);
   const countOfContacts = contacts.length;
 
   const handleOpenNavMenu = e => {
     setAnchorElNav(e.currentTarget);
   };
-  const handleCloseNavMenu = e => {
+
+  const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 

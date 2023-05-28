@@ -15,9 +15,9 @@ import { NavLink } from 'react-router-dom';
 export const SignUp = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+  const handleSubmit = e => {
+    e.preDefault();
+    const data = new FormData(e.currentTarget);
 
     dispatch(
       register({
@@ -27,6 +27,7 @@ export const SignUp = () => {
       })
     );
   };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

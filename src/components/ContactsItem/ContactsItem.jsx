@@ -25,6 +25,9 @@ export const ContactsItem = ({ filteredContact, handleDelete }) => {
               </Avatar>
             </Grid>
             <Grid item xs={5} md={5}>
+              <Typography variant="body1">{name.toUpperCase()}</Typography>
+            </Grid>
+            <Grid item xs={3} md={3}>
               <Typography variant="body1">{number}</Typography>
             </Grid>
             <Grid item xs={3} md={3} className={css.button}>
@@ -37,7 +40,7 @@ export const ContactsItem = ({ filteredContact, handleDelete }) => {
               >
                 Delete
               </Button>
-            </Grid>{' '}
+            </Grid>
           </Grid>
         </Paper>
       ))}

@@ -3,7 +3,7 @@ import { AddContactForm } from '../AddContactForm/AddContactForm';
 
 export const AddContact = () => {
   return (
-    <Container maxWith="sx">
+    <Container maxWidth="sx">
       <AddContactForm />
     </Container>
   );

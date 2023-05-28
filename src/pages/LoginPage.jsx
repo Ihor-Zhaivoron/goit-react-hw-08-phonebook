@@ -17,10 +17,15 @@ export const LoginPage = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
+
     dispatch(
-      logIn({ email: data.get('email'), password: data.get('password') })
+      logIn({
+        email: data.get('email'),
+        password: data.get('password'),
+      })
     );
   };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

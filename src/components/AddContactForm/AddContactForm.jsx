@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Container } from '@mui/material';
 import { TextField, Box, Button } from '@mui/material';
-import { AddContactOperation } from 'redux/contacts/operation';
+import { addContactOperation } from 'redux/contacts/operation';
 import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 
-export const AddContacrForm = () => {
+export const AddContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.contacts);
 
@@ -23,14 +23,16 @@ export const AddContacrForm = () => {
     const contactExists = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
+
     if (contactExists) {
       Notify.failure(`Contact ${name} already exists`);
       return;
     }
-    dispatch(AddContactOperation({ name, number }));
+    dispatch(addContactOperation({ name, number }));
     Notify.success(`Contact ${name} was added successfully!`);
     reset();
   };
+
   return (
     <Container maxWidth="xs">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -54,6 +56,7 @@ export const AddContacrForm = () => {
             })}
           />
         </Box>
+
         <Box mt={3} mb={5}>
           <TextField
             InputProps={{
@@ -80,8 +83,9 @@ export const AddContacrForm = () => {
             })}
           />
         </Box>
+
         <Button type="submit" variant="contained" color="primary">
-          Add contact
+          Add Contact
         </Button>
       </form>
     </Container>

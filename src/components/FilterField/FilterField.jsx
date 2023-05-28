@@ -5,7 +5,7 @@ import {
   Search,
   StyledInputBase,
   SearchIconWrapper,
-} from './FielterField.styled';
+} from './FilterField.styled';
 
 export const FilterField = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ export const FilterField = () => {
   const handleChange = e => {
     dispatch(changeFilter(e.target.value));
   };
+
   return (
     <Search>
       <SearchIconWrapper>

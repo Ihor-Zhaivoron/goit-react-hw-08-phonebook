@@ -13,7 +13,6 @@ import { SignUp } from 'pages/SignUp';
 
 export const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
@@ -38,6 +37,7 @@ export const App = () => {
           }
         />
       </Route>
+
       <Route
         path="/login"
         element={<RestrictedRoute redirectTo="/" component={<LoginPage />} />}
@@ -46,6 +46,7 @@ export const App = () => {
         path="/signup"
         element={<RestrictedRoute redirectTo="/" component={<SignUp />} />}
       />
+
       <Route path="*" element={<Navigate to="/" replace={true} />} />
     </Routes>
   );

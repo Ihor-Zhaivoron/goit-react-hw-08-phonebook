@@ -24,8 +24,8 @@ export const UserMenu = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const handleOpenUserMenu = event => {
-    setAnchorElUser(event.currentTarget);
+  const handleOpenUserMenu = e => {
+    setAnchorElUser(e.currentTarget);
   };
   const handleLogout = () => {
     dispatch(logOut());
